@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="#">Wikinimous</a>
+    <%= link_to "Create new article", new_article_path, :class => "navbar-brand" %>
+</nav>
+
+<div class="container">
+    <ul>
+      <% @articles.each do |article| %>
+        <div >
+          <li class="p-2"><%= link_to article.title, article_path(article) %></li>
+          <p class="p-2"><%=article.content  %></p>
+        </div>
+      <% end %>
+    </ul>
+</div>
